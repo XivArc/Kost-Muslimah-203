@@ -466,25 +466,25 @@ footer a:hover {
     }
 }
 
-/* ===== FIX HERO SPACING (MENGHAPUS SPACE ABU-ABU) ===== */
+/* ===== HERO LAYOUT: TEKS DI ATAS GAMBAR TANPA SPACE ABU-ABU ===== */
 
 .hero {
     position: relative;
     margin: 0;
     padding: 0;
-    min-height: auto !important;      /* paksa abaikan min-height lama */
+    min-height: auto !important;     /* jangan dipaksa tinggi */
     display: block;
 }
 
-/* gambar hero di atas */
+/* Gambar villa jadi background penuh, tapi tetap elemen biasa */
 .hero .slideshow-container {
-    position: relative !important;    /* jangan absolute/inset:0 lagi */
+    position: relative !important;
     inset: auto !important;
     width: 100%;
     max-width: 100%;
     height: auto;
     margin: 0;
-    border-radius: 0;                 /* opsional, biar full lebar */
+    border-radius: 0;
     box-shadow: none;
 }
 
@@ -495,26 +495,49 @@ footer a:hover {
     object-fit: cover;
 }
 
-/* blok teks di bawah gambar */
+/* Overlay gelap di atas gambar */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.35)
+    );
+    pointer-events: none;
+}
+
+/* TEKS: ditempel di atas gambar, di bagian bawah */
 .hero-text {
-    position: static !important;      /* buang posisi absolute 50% */
-    top: auto;
-    left: auto;
-    transform: none !important;
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 1.6rem 1.4rem 1.8rem;
-    background: linear-gradient(180deg, #555555, #777777);
+    position: absolute !important;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    z-index: 1;
+    max-width: 640px;
+    width: 90%;
+    padding: 1.4rem 1.6rem;
     text-align: center;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 14px;
 }
 
+/* Biar judul & paragraf tetap rapi */
 .hero-text h1 {
-    margin-top: 0;
+    margin: 0 0 0.9rem;
 }
 
+.hero-text p {
+    margin: 0 0 1.2rem;
+}
+
+/* Mobile tuning */
 @media (max-width: 768px) {
     .hero-text {
-        padding: 1.3rem 1.2rem 1.5rem;
+        bottom: 7%;
+        padding: 1.1rem 1.3rem;
+        width: 92%;
     }
 }
 
