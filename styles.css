@@ -508,12 +508,12 @@ footer a:hover {
     pointer-events: none;
 }
 
-/* TEKS: kartu di tengah gambar */
+/* TEKS: kartu di tengah gambar (desktop) */
 .hero-text {
     position: absolute !important;
     left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);   /* center horizontal + vertical */
+    top: 40%;                           /* Naikkan posisi di desktop */
+    transform: translate(-50%, -50%);
     z-index: 1;
     max-width: 720px;
     width: min(92%, 720px);
@@ -522,6 +522,7 @@ footer a:hover {
     background: rgba(0, 0, 0, 0.55);
     border-radius: 16px;
 }
+
 
 
 .hero-text h1,
