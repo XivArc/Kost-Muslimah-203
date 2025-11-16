@@ -508,12 +508,12 @@ footer a:hover {
     pointer-events: none;
 }
 
-/* TEKS: kartu di atas gambar, di bagian bawah */
+/* TEKS: kartu di tengah gambar */
 .hero-text {
     position: absolute !important;
     left: 50%;
-    transform: translateX(-50%);
-    bottom: clamp(1.5rem, 8vh, 4rem);   /* jarak dari bawah, fleksibel */
+    top: 50%;
+    transform: translate(-50%, -50%);   /* center horizontal + vertical */
     z-index: 1;
     max-width: 720px;
     width: min(92%, 720px);
@@ -522,6 +522,7 @@ footer a:hover {
     background: rgba(0, 0, 0, 0.55);
     border-radius: 16px;
 }
+
 
 .hero-text h1,
 .hero-text h2 {
@@ -535,11 +536,13 @@ footer a:hover {
 /* Mobile tuning */
 @media (max-width: 768px) {
     .hero-text {
-        bottom: 8%;
+        top: 52%;                  /* sedikit lebih turun di HP */
+        transform: translate(-50%, -50%);
         padding: 1.1rem 1.4rem;
         width: 94%;
     }
 }
+
 
 
 
