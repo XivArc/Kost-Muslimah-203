@@ -1,0 +1,473 @@
+/* Global styles & palette */
+:root {
+    --primary-color: #003b32;
+    --accent-color: #c8a96a;
+    --text-dark: #222222;
+    --bg-light: #f7f5f0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo-image {
+    height: 48px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--primary-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.hero .slideshow-container {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hero .slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.35));
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    padding: 2.5rem 2rem;
+    text-align: left;
+}
+
+.hero-text h1 {
+    margin: 0 0 1rem;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.03em;
+}
+
+.hero-text p {
+    margin: 0 0 1.8rem;
+    color: #f5f5f5;
+    font-size: 1.05rem;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b18b47;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+/* Fasilitas */
+.fasilitas {
+    padding: 4rem 2rem 3rem;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.fasilitas h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.fasilitas .subheading {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    color: #666666;
+    font-size: 0.98rem;
+}
+
+.fasilitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.fasilitas-item {
+    background: #ffffff;
+    padding: 1.8rem 1.6rem;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.fasilitas-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.fasilitas-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.fasilitas-item h3 {
+    margin: 0.9rem 0 0.4rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+}
+
+.fasilitas-item p {
+    margin: 0;
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+/* Gallery */
+.gallery {
+    padding: 4rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.gallery-subtitle {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    color: #666666;
+    font-size: 0.98rem;
+}
+
+/* Slider container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 16 / 9;
+}
+
+.slides {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider navigation arrows */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.8rem 1rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background: #ffffff;
+    transform: scale(1.15);
+}
+
+/* Kontak */
+.kontak {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.kontak h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.kontak p {
+    margin: 0.4rem 0;
+    color: #555555;
+    font-size: 1rem;
+}
+
+.kontak i {
+    color: var(--accent-color);
+    margin-right: 0.4rem;
+}
+
+.kontak a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.kontak a:hover {
+    text-decoration: underline;
+}
+
+.kontak-actions {
+    margin-top: 1.5rem;
+}
+
+.kontak-actions .btn {
+    margin: 0.25rem 0.4rem;
+}
+
+/* Footer */
+footer {
+    background: #0b1412;
+    color: #eeeeee;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffffff;
+    margin: 0 0.4rem;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Scroll reveal (fade-in saat muncul di viewport) */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+    transition-delay: var(--delay, 0s); /* bisa di-set via inline style */
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    header {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+    }
+
+    .hero {
+        align-items: flex-end;
+        padding-bottom: 3rem;
+    }
+
+    .hero-text {
+        padding: 1.8rem 1.4rem;
+        background: rgba(0, 0, 0, 0.35);
+        border-radius: 14px;
+    }
+
+    .fasilitas {
+        padding-inline: 1.3rem;
+    }
+
+    .slideshow-container {
+        border-radius: 12px;
+    }
+
+    .prev,
+    .next {
+        padding: 0.5rem 0.7rem;
+    }
+}

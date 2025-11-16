@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kost Muslimah 203 - Kost Eksklusif & Nyaman untuk Muslimah</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles & Icons -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="kost.png" alt="Kost Muslimah 203 Logo" class="logo-image">
+        </div>
+        <nav class="nav-menu">
+            <a href="#beranda" class="nav-link">Beranda</a>
+            <a href="#fasilitas" class="nav-link">Fasilitas</a>
+            <a href="#galeri" class="nav-link">Galeri</a>
+            <a href="#kontak" class="nav-link">Lokasi & Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero / Beranda -->
+        <section id="beranda" class="hero">
+            <div class="slideshow-container hero-image">
+                <img src="Villa.jpg" alt="Tampak depan Kost Muslimah 203">
+            </div>
+            <div class="hero-text">
+                <h1>Kost Muslimah 203</h1>
+                <p>Kost eksklusif khusus muslimah dengan fasilitas, lingkungan yang tenang, dan lokasi strategis dekat beragam fasilitas publik.</p>
+                <div class="hero-cta">
+                    <a href="#fasilitas" class="btn">Lihat Fasilitas</a>
+                    <a href="https://wa.me/6281234567890" class="btn whatsapp-btn" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Cek Kamar Kosong
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fasilitas -->
+        <section id="fasilitas" class="fasilitas">
+            <h2>Fasilitas Kost</h2>
+            <p class="subheading">
+                Semua kamar dilengkapi fasilitas penunjang kenyamanan dan keamanan, sehingga cocok untuk mahasiswi maupun pekerja muslimah.
+            </p>
+            <div class="fasilitas-grid">
+                <div class="fasilitas-item reveal">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Keamanan</h3>
+                    <p>Pagar baja tinggi dan lingkungan yang terkontrol untuk keamanan tingkat tinggi.</p>
+                </div>
+                <div class="fasilitas-item reveal">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Lokasi Strategis</h3>
+                    <p>Dekat kampus, pasar, minimarket, dan akses transportasi umum.</p>
+                </div>
+                <div class="fasilitas-item reveal">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Internet Cepat</h3>
+                    <p>Dilengkapi Wi-Fi kencang dan stabil untuk belajar maupun bekerja.</p>
+                </div>
+                <div class="fasilitas-item reveal">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Subsidi Listrik</h3>
+                    <p>Hemat biaya dengan listrik bersubsidi sesuai ketentuan yang berlaku.</p>
+                </div>
+                <div class="fasilitas-item reveal">
+                    <i class="fas fa-fire"></i>
+                    <h3>Gas Alam</h3>
+                    <p>Dapur bersama dengan gas alam yang aman dan ramah lingkungan.</p>
+                </div>
+                <div class="fasilitas-item reveal">
+                    <i class="fas fa-water"></i>
+                    <h3>Air PAM</h3>
+                    <p>Air bersih PAM dengan kualitas terjaga untuk kebutuhan sehari-hari.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri -->
+        <section id="galeri" class="gallery">
+            <h2>Galeri Kost</h2>
+            <p class="gallery-subtitle">
+                Suasana gerbang, teras, dan ruang bersama Kost Muslimah 203 yang nyaman untuk aktivitas harian.
+            </p>
+            <div class="slideshow-container reveal">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="Gerbang.png" alt="Gerbang Kost Muslimah 203">
+                    </div>
+                    <div class="slide">
+                        <img src="teras.png" alt="Teras Kost Muslimah 203">
+                    </div>
+                    <div class="slide">
+                        <img src="teras2.png" alt="Teras Kost Muslimah 203">
+                    </div>
+                    <div class="slide">
+                        <img src="RuangUtama.png" alt="Ruang utama dan area bersama Kost Muslimah 203">
+                    </div>
+                </div>
+                <div class="dots"></div>
+                <button class="prev" onclick="changeSlide(this, -1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(this, 1)">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Kontak & Lokasi -->
+        <section id="kontak" class="kontak">
+            <h2>Hubungi Kami</h2>
+            <p><i class="fas fa-phone"></i><strong>Telepon:</strong> 0821-2225-8453</p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <strong>Email:</strong>
+                <a href="mailto:kostmuslimah203@gmail.com">kostmuslimah203@gmail.com</a>
+            </p>
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <strong>Alamat:</strong>
+                Jl. Teratai Putih 2 Gg. 8 No.203, RT.17/RW.4, Malaka Sari, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13460
+            </p>
+            <div class="kontak-actions reveal">
+                <a href="https://maps.app.goo.gl/9X1kGXY2rD2T7tKB6" class="btn" target="_blank" rel="noopener">
+                    <i class="fas fa-directions"></i> Lihat Peta
+                </a>
+                <a href="https://wa.me/6282122258453" class="btn whatsapp-btn" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Kami
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kost Muslimah 203. All rights reserved.</p>
+        <p>Ikuti kami:
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
