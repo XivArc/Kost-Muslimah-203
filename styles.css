@@ -81,13 +81,14 @@ header {
 /* Hero */
 .hero {
     position: relative;
-    min-height: 72vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
     overflow: hidden;
+    padding: 2.5rem 2rem 3rem;
 }
+
 
 
 .hero .slideshow-container {
@@ -426,11 +427,6 @@ footer a:hover {
         padding: 0.8rem 1.5rem;
     }
 
-    .hero {
-        min-height: auto;             
-        padding: 2rem 1.5rem 2.5rem;   
-    }
-
     .hero-text h1 {
         font-size: 2.2rem;
     }
@@ -448,12 +444,6 @@ footer a:hover {
     .nav-menu {
         flex-wrap: wrap;
         gap: 0.9rem;
-    }
-
-    .hero {
-        min-height: auto;          
-        align-items: center;
-        padding: 1.6rem 1.4rem 2rem;
     }
 
     .hero-text {
