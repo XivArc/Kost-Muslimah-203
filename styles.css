@@ -466,17 +466,17 @@ footer a:hover {
     }
 }
 
-/* ===== HERO LAYOUT: TEKS DI ATAS GAMBAR TANPA SPACE ABU-ABU ===== */
+/* ===== HERO FINAL: TEKS OVERLAY DI ATAS VILLA TANPA SPACE ABU-ABU ===== */
 
 .hero {
     position: relative;
     margin: 0;
     padding: 0;
-    min-height: auto !important;     /* jangan dipaksa tinggi */
     display: block;
+    min-height: auto !important; /* pastikan tidak ada min-height yang nyangkut */
 }
 
-/* Gambar villa jadi background penuh, tapi tetap elemen biasa */
+/* gambar villa sebagai layer dasar hero */
 .hero .slideshow-container {
     position: relative !important;
     inset: auto !important;
@@ -495,7 +495,7 @@ footer a:hover {
     object-fit: cover;
 }
 
-/* Overlay gelap di atas gambar */
+/* overlay gelap di atas gambar */
 .hero::after {
     content: "";
     position: absolute;
@@ -508,23 +508,23 @@ footer a:hover {
     pointer-events: none;
 }
 
-/* TEKS: ditempel di atas gambar, di bagian bawah */
+/* TEKS: kartu di atas gambar, di bagian bawah */
 .hero-text {
     position: absolute !important;
     left: 50%;
-    bottom: 10%;
     transform: translateX(-50%);
+    bottom: clamp(1.5rem, 8vh, 4rem);   /* jarak dari bawah, fleksibel */
     z-index: 1;
-    max-width: 640px;
-    width: 90%;
-    padding: 1.4rem 1.6rem;
+    max-width: 720px;
+    width: min(92%, 720px);
+    padding: 1.4rem 1.8rem;
     text-align: center;
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 16px;
 }
 
-/* Biar judul & paragraf tetap rapi */
-.hero-text h1 {
+.hero-text h1,
+.hero-text h2 {
     margin: 0 0 0.9rem;
 }
 
@@ -535,9 +535,9 @@ footer a:hover {
 /* Mobile tuning */
 @media (max-width: 768px) {
     .hero-text {
-        bottom: 7%;
-        padding: 1.1rem 1.3rem;
-        width: 92%;
+        bottom: 8%;
+        padding: 1.1rem 1.4rem;
+        width: 94%;
     }
 }
 
