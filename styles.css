@@ -139,8 +139,10 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
+    width: 100%;
     justify-content: center;
 }
+
 
 /* Buttons */
 .btn {
