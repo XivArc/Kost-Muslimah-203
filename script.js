@@ -112,4 +112,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inisialisasi efek scroll reveal
     initScrollReveal();
+
+    // --- 1. LOGIKA HAMBURGER MENU ---
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            // Ganti ikon burger jadi 'X' (close) saat dibuka
+            const icon = hamburger.querySelector('i');
+            if (icon) {
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            }
+        });
+    }
+
+    // Tutup menu otomatis jika salah satu link navigasi diklik
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu) navMenu.classList.remove('active');
+            if (hamburger) {
+                const icon = hamburger.querySelector('i');
+                if (icon && icon.classList.contains('fa-times')) {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            }
+        });
+    });
+
+    // --- 2. LOGIKA SWIPE GALERI UNTUK HP ---
+    if (galleryContainer) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        galleryContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        galleryContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // Jarak minimal usapan untuk pindah gambar
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Geser ke kiri -> Gambar Selanjutnya (Next)
+                changeSlide(null, 1);
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Geser ke kanan -> Gambar Sebelumnya (Prev)
+                changeSlide(null, -1);
+            }
+        }
+    }
 });
