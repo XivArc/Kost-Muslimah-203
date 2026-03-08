@@ -277,11 +277,13 @@ header {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s;
 }
 
 .slide.active {
     opacity: 1;
+    visibility: visible;
 }
 
 .slide img {
