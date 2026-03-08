@@ -683,6 +683,19 @@ footer a:hover {
     }
 }
 
+/* Mengangkat tombol panah dan dots agar tidak tertutup gambar aktif */
+.prev,
+.next,
+.dots {
+    z-index: 20 !important; /* Harus lebih besar dari z-index: 10 milik .slide.active */
+    position: absolute; /* Memastikan z-index bekerja dengan baik */
+}
+
+/* Khusus untuk area dots, pastikan bisa diklik */
+.dots {
+    pointer-events: auto;
+}
+
 
 
 
