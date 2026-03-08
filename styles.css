@@ -278,12 +278,16 @@ header {
     inset: 0;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none; /* KUNCI 1: Browser akan tembus/mengabaikan klik pada gambar transparan */
+    z-index: 1;           /* KUNCI 2: Taruh gambar yang tidak aktif di tumpukan paling bawah */
     transition: opacity 0.6s ease, visibility 0.6s;
 }
 
 .slide.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto; /* KUNCI 1: Hanya gambar ini yang bisa merespon klik */
+    z-index: 10;          /* KUNCI 2: Paksa gambar ini berada di tumpukan paling atas */
 }
 
 .slide img {
