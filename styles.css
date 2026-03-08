@@ -577,6 +577,106 @@ footer a:hover {
     }
 }
 
+/* --- GAYA UNTUK LIGHTBOX GALERI --- */
+
+/* Buat gambar galeri bisa diklik */
+.slide img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.02); /* Sedikit zoom saat kursor di atasnya */
+}
+
+/* Modal/Overlay Lightbox (Sembunyi secara default) */
+.lightbox {
+    display: none; /* Sembunyikan lightbox */
+    position: fixed; /* Tetap di tempat saat di-scroll */
+    z-index: 2000; /* Paling atas di atas segalanya */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Bisa scroll jika gambar terlalu besar di HP */
+    background-color: rgba(0, 0, 0, 0.93); /* Hitam transparan pekat */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gambar besar di dalam Lightbox */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%;
+    max-height: 85vh; /* Jangan lewat dari 85% tinggi layar */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    
+    /* Animasi muncul */
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+/* Teks Keterangan (Caption) */
+.lightbox-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1rem;
+    font-family: var(--body-font);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Tombol Tutup (X) */
+.close-lightbox {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    color: var(--accent-color); /* Gunakan warna emas aksen */
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: white;
+    text-decoration: none;
+}
+
+/* Animasi Zoom saat Lightbox terbuka */
+@keyframes zoom {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Penyesuaian untuk layar kecil (HP) */
+@media only screen and (max-width: 700px) {
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 70vh; /* Sedikit lebih kecil di HP */
+    }
+    .close-lightbox {
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+    }
+}
+
 
 
 
